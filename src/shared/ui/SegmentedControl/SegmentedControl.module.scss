@@ -1,0 +1,119 @@
+@import "..//..//..//scss/variables";
+
+.segmentedControlWrapper {
+  margin-bottom: 16px;
+}
+
+.segmentedControl {
+  position: relative;
+  display: flex;
+
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: $bgSecondary;
+  color: $bgAccent;
+
+  &.large {
+    height: 56px;
+    font: $fontP4;
+  }
+  &.medium {
+    height: 48px;
+    font: $fontP6;
+  }
+  &.small {
+    height: 40px;
+    font: $fontP8;
+  }
+  &.xs {
+    height: 32px;
+    font: $fontP10;
+  }
+
+  &.line {
+    background-color: transparent; 
+    .segmentOption {
+      background-color: transparent; 
+      color: $textAccent; 
+
+      &:hover {
+        background-color: transparent; 
+      }
+
+      &.active {
+        background-color: transparent; 
+        color: $textAccentActive; 
+      }
+    }
+  }
+
+  &.on {
+    .segmentOption {
+      color: $textAccent;
+
+      &:hover {
+        background-color: $iconAccentSubduedHover;
+      }
+
+      &.active {
+        background-color: $bgAccentSubduedActive;
+        color: $textAccentActive;
+        border-radius: $borderRadiusLarge;
+        -webkit-border-radius: $borderRadiusLarge;
+        -moz-border-radius: $borderRadiusLarge;
+        -ms-border-radius: $borderRadiusLarge;
+        -o-border-radius: $borderRadiusLarge;
+      }
+    }
+  }
+}
+
+.segmentOption {
+  flex: 1;
+  padding: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background-color: $iconAccentSubduedHover;
+    border-radius: $borderRadiusLarge;
+  }
+
+  &.active {
+    background-color: transparent;
+    color: $textAccentActive;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: $bgDisabled;
+    color: $textDisabled;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.underline {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 4px;
+  background-color: $bgAccent;
+  transition: transform 0.3s ease; 
+}
+
+.onIndicator {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 4px;
+  background-color: $bgAccent;
+  transition: left 0.3s ease; 
+}

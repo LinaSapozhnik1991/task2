@@ -1,0 +1,165 @@
+@import "../../../scss/variables"; 
+
+.dropdownTag {
+  position: relative;
+  width: 340px;
+  font-family: $fontFamily;
+  &.large {
+    font: $fontP4;
+    padding: 12px;
+
+    .tag {
+      padding: 8px 12px;
+      font: $fontP6;
+    }
+
+    .input {
+      height: 44px;
+      font: $fontP6;
+    }
+  }
+
+  &.medium {
+    font: $fontP4;
+    padding: 10px;
+
+    .tag {
+      padding: 5px 10px;
+      font: $fontP8;
+    }
+
+    .input {
+      height: 40px;
+      font-size: $fontP8;
+    }
+  }
+
+  &.small {
+    font-size: 12px;
+    padding: 8px;
+
+    .tag {
+      padding: 4px 8px;
+      font: $fontP8;
+    }
+
+    .input {
+      height: 36px;
+      font: $fontP10;
+    }
+  }
+}
+.dropdownInput {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid $borderPrimary;
+  border-radius: $borderRadiusSmall;
+  background-color: $bgPrimary;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: $borderPrimary;
+  }
+}
+
+.sizeLabel {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 2px;
+  font-size: $fontP5;
+  border-radius: $borderRadiusLarge;
+
+  &.singleTag {
+    background-color: transparent;
+    border: none;
+    color: $textPrimary;
+  }
+
+  &.multipleTags {
+    background-color: $bgSecondary;
+    border: 1px solid $borderPrimary;
+    &:hover {
+      background-color: $bgSecondaryHover;
+    }
+    color: $textSecondary;
+  }
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  color: $iconSecondary;
+  font-size: $fontP5;
+}
+
+.toggleIcon {
+  margin-left: 10px;
+  color: $iconPrimary;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: $bgSecondary;
+  border: 1px solid $borderSecondary;
+  border-radius: $borderRadiusSmall;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.searchInputContainer {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  height: 30px;
+  background-color: $bgSecondary;
+}
+
+.searchIcon {
+  margin-right: 5px;
+  color: $iconSecondary;
+}
+
+.input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.optionList {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $bgSecondaryHover;
+  }
+}
+
+.noOptions {
+  padding: 10px;
+  text-align: center;
+  color: $textSecondary;
+}

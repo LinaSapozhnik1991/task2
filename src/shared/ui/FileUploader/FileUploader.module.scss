@@ -1,0 +1,91 @@
+@import "..//..//..//scss/variables";
+
+.fileUploader {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+
+  align-items: center;
+  border: medium dashed $borderPrimary;
+
+  border-radius: 8px;
+
+  &.hover,
+  &:hover {
+    border-color: $bgAccentHover;
+  }
+  &.active,
+  &:active {
+    background-color: $bgAccent;
+    border-color: $borderAccent;
+    .button {
+      background-color: transparent;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    background-color: $bgDisabled;
+  }
+
+  &.large {
+    width: 318px;
+    height: 170px;
+    font: $fontP2;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &.medium {
+    width: 274px;
+    height: 146px;
+
+    font: $fontP5;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &.small {
+    width: 230px;
+    height: 122px;
+    font: $fontP7;
+
+    .icon {
+      width: 14px;
+      height: 14px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .uploadContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .label {
+      margin-bottom: 10px;
+    }
+
+    .fileInput {
+      display: none;
+    }
+  }
+
+  &.error {
+    border-color: $borderCritical;
+    color: $textCritical;
+  }
+}
+.errorMessage {
+  color: $textCritical;
+  font: fontP7;
+}

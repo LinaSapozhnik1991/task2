@@ -1,0 +1,108 @@
+@import "..//..//..//scss/variables";
+.radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  &.default {
+    accent-color: $bgAccent;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    .circle {
+      border-color: $iconDisabled;
+    }
+
+    .innerCircle {
+      background-color: $iconDisabled;
+    }
+  }
+  .visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  &.active,
+  &:active {
+    border-color: $borderAccentActive;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  position: relative;
+  transition: border-color 0.3s;
+
+  &.xsmall {
+    width: 10px;
+    height: 10px;
+    border: 1px solid $bgAccent;
+  }
+
+  &.small {
+    width: 12px;
+    height: 12px;
+    border: 1px solid $bgAccent;
+  }
+
+  &.medium {
+    width: 14px;
+    height: 14px;
+    border: 1px solid $bgAccent;
+  }
+
+  &.large {
+    width: 16px;
+    height: 16px;
+    border: 1px solid $bgAccent;
+  }
+
+  &.checked {
+    border-color: $bgAccentActive;
+  }
+}
+
+.innerCircle {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+
+  &.xsmall {
+    width: 7px;
+    height: 7px;
+    background-color: $bgAccentActive;
+  }
+
+  &.small {
+    width: 8px;
+    height: 8px;
+    background-color: $bgAccentActive;
+  }
+
+  &.medium {
+    width: 9px;
+    height: 9px;
+    background-color: $bgAccentActive;
+  }
+
+  &.large {
+    width: 10px;
+    height: 10px;
+    background-color: $bgAccentActive;
+  }
+}

@@ -1,0 +1,136 @@
+//color
+$white    : #FFFFFF;
+$white-600: rgba(255, 255, 255, 0.88);
+$white-500: rgba(255, 255, 255, 0.64);
+$white-400: rgba(255, 255, 255, 0.4);
+$white-300: rgba(255, 255, 255, 0.14);
+$white-200: rgba(255, 255, 255, 0.09);
+$white-100: rgba(255, 255, 255, 0.06);
+
+$black    : #08091C;
+$black-600: rgba(8, 9, 28, 0.88);
+$black-500: rgba(8, 9, 28, 0.6);
+$black-400: rgba(8, 9, 28, 0.36);
+$black-300: rgba(8, 9, 28, 0.12);
+$black-200: rgba(8, 9, 28, 0.08);
+$black-100: rgba(8, 9, 28, 0.04);
+
+$purple    : #9747FF;
+$purple-800: rgba(122, 19, 255, 1);
+$purple-700: rgba(134, 40, 255, 1);
+$purple-600: rgba(151, 71, 255, 0.88);
+$purple-500: rgba(151, 71, 255, 0.6);
+$purple-400: rgba(151, 71, 255, 0.36);
+$purple-300: rgba(151, 71, 255, 0.14);
+$purple-200: rgba(151, 71, 255, 0.1);
+$purple-100: rgba(151, 71, 255, 0.06);
+
+$red    : #E54545;
+$red-800: rgba(229, 23, 23, 1);
+$red-700: rgba(229, 46, 46, 1);
+$red-600: rgba(229, 69, 69, 0.88);
+$red-500: rgba(229, 69, 69, 0.6);
+$red-400: rgba(229, 69, 69, 0.36);
+$red-300: rgba(229, 69, 69, 0.14);
+$red-200: rgba(229, 69, 69, 0.1);
+$red-100: rgba(229, 69, 69, 0.06);
+
+//bg
+$bgPrimary              : $white;
+$bgSecondary            : $black-100;
+$bgSecondaryHover       : $black-200;
+$bgSecondaryActive      : $black-300;
+$bgDisabled             : $black-200;
+$bgAccent               : $purple;
+$bgAccentHover          : $purple-700;
+$bgAccentActive         : $purple-800;
+$bgAccentSubdued        : $purple-100;
+$bgAccentSubduedHover   : $purple-200;
+$bgAccentSubduedActive  : $purple-300;
+$bgCritical             : $red;
+$bgCriticalHover        : $red-700;
+$bgCriticalActive       : $red-800;
+$bgCriticalSubdued      : $red-100;
+$bgCriticalSubduedHover : $red-200;
+$bgCriticalSubduedActive: $red-300;
+
+//text
+$textPrimary            : $black;
+$textSecondary          : $black-500;
+$textDisabled           : $black-400;
+$textAccent             : $purple;
+$textAccentHover        : $purple-700;
+$textAccentActive       : $purple-800;
+$textAccentSubdued      : $purple-100;
+$textAccentSubduedHover : $purple-200;
+$textAccentSubduedActive: $purple-300;
+$textCritical           : $red;
+$textCriticalHover      : $red-700;
+$textCriticalActive     : $red-800;
+
+//icon
+$iconPrimary            : $black;
+$iconSecondary          : $black-500;
+$iconDisabled           : $black-400;
+$iconAccent             : $purple;
+$iconAccentHover        : $purple-700;
+$iconAccentActive       : $purple-800;
+$iconAccentSubdued      : $purple-100;
+$iconAccentSubduedHover : $purple-200;
+$iconAccentSubduedActive: $purple-300;
+$iconCritical           : $red;
+$iconCriticalHover      : $red-700;
+$iconCriticalActive     :$red-800;
+
+//border
+$borderPrimary     : $black-300;
+$borderSecondary   : $black-200;
+$borderFocus       : $black;
+$borderAccent      : $purple;
+$borderAccentHover : $purple-700;
+$borderAccentActive: $purple-800;
+$borderCritical    : $red;
+
+//font
+$fontFamily: 'Inter',
+'Arial',
+sans-serif;
+$paragraphSpacing     : -8px;
+$paragraphSpacingSmall: -4px;
+$fontH1               : 700 #{36px} / #{120%} $fontFamily;
+$fontH2               : 700 #{32px} / #{120%} $fontFamily;
+$fontH3               : 700 #{24px} / #{120%} $fontFamily;
+$fontH4               : 700 #{18px} / #{120%} $fontFamily;
+$fontH5               : 700 #{16px} / #{120%} $fontFamily;
+
+$fontP1 : 500 #{24px} / #{120%} $fontFamily;
+$fontP2 : 500 #{18px} / #{120%} $fontFamily;
+$fontP3 : 400 #{16px} / #{120%} $fontFamily;
+$fontP4 : 500 #{16px} / #{120%} $fontFamily;
+$fontP5 : 400 #{14px} / #{120%} $fontFamily;
+$fontP6 : 500 #{14px} / #{120%} $fontFamily;
+$fontP7 : 400 #{12px} / #{120%} $fontFamily;
+$fontP8 : 500 #{12px} / #{120%} $fontFamily;
+$fontP9 : 400 #{10px} / #{120%} $fontFamily;
+$fontP10: 500 #{10px} / #{120%} $fontFamily;
+
+//border-radius
+
+$borderRadiusLarge : 8px;
+$borderRadiusMedium: 6px;
+$borderRadiusSmall : 4px;
+$borderRadiusBig   : 64px;
+
+@media (max-width: 1024px) {
+    $borderRadiusLarge: 6px;
+}
+
+@media (max-width: 768px) {
+    $bordeRadiusLarge  : 4px;
+    $borderRadiusMedium: 4px;
+}
+
+@media (max-width: 320px) {
+    $borderRadiusLarge : 4px;
+    $borderRadiusMedium: 4px;
+}

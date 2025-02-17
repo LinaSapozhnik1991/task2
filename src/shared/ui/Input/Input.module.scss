@@ -1,0 +1,138 @@
+@import "../../../scss/variables";
+
+.inputContainer {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: $textSecondary;
+  font: $fontP4;
+  transition: all 0.3s ease-in-out;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 320px;
+}
+
+.input {
+  padding: 0 40px;
+  display: block;
+  border: 1px solid $borderPrimary;
+  width: 260px;
+  color: $textPrimary;
+  border-radius: $borderRadiusMedium;
+  font: $fontP4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &.default {
+    background-color: $bgAccent;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: $bgDisabled;
+    color: $textDisabled;
+    cursor: not-allowed;
+    border: none;
+    color: $textDisabled;
+    .icon {
+      color: $iconDisabled;
+    }
+
+    .clearIcon {
+      color: $iconDisabled;
+    }
+  }
+
+  &:focus {
+    border-color: $borderAccent;
+    outline: none;
+  }
+
+  &.active,
+  &:active {
+    border-color: $borderAccent;
+  }
+  &.hover,
+  &:hover {
+    background-color: $bgDisabled;
+    border: none;
+    color: $textPrimary;
+  }
+  &.radius-Small {
+    border-radius: $borderRadiusLarge;
+    -webkit-border-radius: $borderRadiusLarge;
+    -moz-border-radius: $borderRadiusLarge;
+    -ms-border-radius: $borderRadiusLarge;
+    -o-border-radius: $borderRadiusLarge;
+  }
+
+  &.radius-Big {
+    border-radius: $borderRadiusBig;
+    -webkit-border-radius: $borderRadiusBig;
+    -moz-border-radius: $borderRadiusBig;
+    -ms-border-radius: $borderRadiusBig;
+    -o-border-radius: $borderRadiusBig;
+  }
+
+  &.small {
+    font: $fontP7;
+    height: 32px;
+  }
+
+  &.medium {
+    font: $fontP5;
+    height: 40px;
+  }
+
+  &.large {
+    font: $fontP3;
+    height: 48px;
+  }
+}
+.error {
+  border-color: $borderCritical;
+  color: $textCritical;
+}
+
+.errorMessage {
+  color: $textCritical;
+  font-size: $fontP7;
+}
+
+.icon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $iconPrimary;
+  &:disabled {
+    color: $iconDisabled;
+  }
+}
+
+.clearIcon {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: $iconPrimary;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  &:disabled {
+    color: $iconDisabled;
+  }
+}
+.textarea {
+  padding: 10px 15px;
+}

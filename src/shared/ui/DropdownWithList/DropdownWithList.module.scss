@@ -1,0 +1,165 @@
+@import "..//..//../scss/variables";
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 340px;
+  &.disabled {
+    background-color: $bgDisabled;
+    color: $textDisabled;
+    pointer-events: none;
+    .plusIcon {
+      color: $iconDisabled;
+      margin-right: 5px;
+    }
+  }
+  &.hover,
+  &:hover {
+    background-color: $bgAccentSubduedHover;
+  }
+  &.active {
+    background-color: $bgAccentSubdued;
+  }
+}
+
+.toggleIcon {
+  font-size: 16px;
+  color: $textPrimary;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: $bgSecondary;
+  border: 1px double $borderSecondary;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: $bgSecondary;
+
+  &.open {
+    border-color: $borderSecondary;
+    background-color: $bgSecondary;
+    margin-bottom: 5px;
+    overflow: hidden;
+
+    &.hover,
+    &:hover {
+      background-color: $bgAccentSubduedHover;
+    }
+  }
+}
+
+.selectedText {
+  flex-grow: 1;
+  color: $textSecondary;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.checkIcon {
+  color: $iconSecondary;
+  margin-right: 5px;
+}
+
+.clearIcon {
+  color: $iconSecondary;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.toggleIcon {
+  color: $iconSecondary;
+}
+
+.dropdownListContainer {
+  margin-top: 5px;
+  position: absolute;
+  z-index: 1000;
+}
+
+.options {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px double $borderSecondary;
+  width: 340px;
+  max-height: 120px;
+  overflow-y: auto;
+  background-color: $bgSecondary;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bgSecondary;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $borderSecondary;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $bgAccentSubduedHover;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: $borderSecondary $bgSecondary;
+
+  .option {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &.hover,
+    &:hover {
+      background-color: $bgAccentSubduedHover;
+    }
+
+    .optionContent {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+
+      .plusIcon {
+        color: $iconSecondary;
+        margin-right: 5px;
+      }
+
+      .optionText {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 340px;
+  height: 180px;
+  background-color: $bgAccentSubdued;
+  border: 1px solid $borderSecondary;
+  color: $textAccent;
+  font: $fontP6;
+}
+.border {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 1px solid $borderSecondary;
+  background-color: $bgSecondary;
+  border-radius: $borderRadiusSmall;
+}

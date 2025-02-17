@@ -1,0 +1,147 @@
+@import "../../../scss/variables";
+
+.button {
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  border-radius: 8px;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+
+  &.large {
+    width: 191px;
+    height: 48px;
+    font: $fontP4;
+  }
+  &.medium {
+    width: 183px;
+    height: 40px;
+    font: $fontP8;
+  }
+  &.small {
+    width: 141px;
+    height: 32px;
+    font: $fontP10;
+  }
+  &.xs {
+    width: 100px;
+    height: 24px;
+    font: $fontP10;
+  }
+  &.miniLarge {
+    width: 48px;
+    height: 48px;
+    font: $fontP5;
+  }
+  &.miniMedium {
+    width: 40px;
+    height: 40px;
+    font: $fontP6;
+  }
+
+  &.miniSmall {
+    width: 32px;
+    height: 32px;
+    font: $fontP7;
+  }
+
+  &.miniXs {
+    width: 24px;
+    height: 24px;
+    font: $fontP8;
+  }
+
+  &.radius-Small {
+    border-radius: $borderRadiusLarge;
+    -webkit-border-radius: $borderRadiusLarge;
+    -moz-border-radius: $borderRadiusLarge;
+    -ms-border-radius: $borderRadiusLarge;
+    -o-border-radius: $borderRadiusLarge;
+  }
+  &.radius-Big {
+    border-radius: $borderRadiusBig;
+    -webkit-border-radius: $borderRadiusBig;
+    -moz-border-radius: $borderRadiusBig;
+    -ms-border-radius: $borderRadiusBig;
+    -o-border-radius: $borderRadiusBig;
+  }
+
+  &.default {
+    background-color: $bgAccent;
+    color: $white;
+  }
+
+  &.primary {
+    background-color: $bgAccent;
+    color: $white;
+
+    &.hover {
+      background-color: $bgAccentHover;
+    }
+
+    &.active {
+      background-color: $bgAccentActive;
+    }
+  }
+  &.secondary {
+    background-color: $bgAccentSubdued;
+    color: $textAccent;
+
+    &.hover {
+      background-color: $bgAccentSubduedHover;
+    }
+
+    &.active {
+      background-color: $bgAccentSubduedActive;
+    }
+  }
+  &.clear {
+    background-color: $bgPrimary;
+    color: $bgAccentHover;
+    &.disabled {
+      background-color: $bgPrimary;
+      color: $textDisabled;
+    }
+  }
+  &.critical {
+    background-color: $bgCritical;
+    color: $white;
+    &.hover {
+      background-color: $bgCriticalHover;
+      color: $white;
+    }
+
+    &.active {
+      background-color: $bgCriticalActive;
+      color: $white;
+    }
+  }
+  &.critical-secondary {
+    background-color: $bgCriticalSubdued;
+    color: $textCritical;
+    &.hover {
+      background-color: $bgCriticalSubduedHover;
+      color: $textCriticalHover;
+    }
+    &.active {
+      background-color: $bgCriticalSubduedActive;
+      color: $textCriticalActive;
+    }
+  }
+  &.disabled {
+    cursor: not-allowed;
+    background-color: $bgDisabled;
+    color: $textDisabled;
+  }
+}

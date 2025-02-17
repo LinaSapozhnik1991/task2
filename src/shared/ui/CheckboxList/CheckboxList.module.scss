@@ -1,0 +1,18 @@
+@import "..//..//..//scss/variables";
+.checkboxList {
+  padding: 5px;
+  width: 350px;
+  background-color: $bgSecondary;
+  border: 1px solid $bgSecondary;
+  border-radius: $borderRadiusLarge;
+}
+
+.checkboxItem {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 2px;
+}
+
+.nestedCheckboxes {
+  padding-left: 13px;
+}

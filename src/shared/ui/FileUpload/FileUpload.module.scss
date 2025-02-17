@@ -1,0 +1,126 @@
+@import "../../../scss/variables";
+
+.fileUpload {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: $bgSecondary;
+  border: 1px solid $borderPrimary;
+  border-radius: $borderRadiusMedium;
+  width: 340px;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &.hover,
+  &:hover {
+    background-color: $bgSecondaryHover;
+  }
+
+  &.disabled {
+    .fileName,
+    .icon,
+    .removeButton {
+      color: $textDisabled;
+    }
+    background-color: $bgDisabled;
+    border-color: $bgDisabled;
+    cursor: not-allowed;
+  }
+
+  &.active {
+    background-color: $bgSecondaryActive;
+    border-color: $borderPrimary;
+  }
+
+  .uploadLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    color: $textPrimary;
+  }
+
+  &.small {
+    height: 46px;
+    font: $fontP7;
+  }
+  &.medium {
+    height: 56px;
+    font: $fontP5;
+  }
+  &.large {
+    height: 64px;
+    font: $fontP3;
+  }
+
+  .leftSection {
+    display: flex;
+    align-items: center;
+  }
+
+  .rightSection {
+    display: flex;
+    align-items: center;
+  }
+
+  .removeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $textPrimary;
+
+    &.hover,
+    &:hover {
+      color: $textSecondary;
+    }
+  }
+
+  .fileInput {
+    display: none;
+  }
+
+  .icon {
+    margin: 8px;
+    color: $iconPrimary;
+  }
+
+  .fileName {
+    color: $textSecondary;
+
+    margin-right: 5px;
+  }
+
+  .fileSize {
+    color: $textSecondary;
+    margin-right: 8px;
+  }
+
+  &.error {
+    border-color: $borderCritical;
+    color: $textCritical;
+  }
+
+  .errorMessage {
+    color: $textCritical;
+    font-size: $fontP7;
+    margin-left: 5px;
+  }
+
+  .progressBar {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .progressFill {
+    height: 100%;
+    position: absolute;
+    background-color: $bgAccentSubdued;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+    -moz-transition: width 0.3s ease;
+    -ms-transition: width 0.3s ease;
+    -o-transition: width 0.3s ease;
+  }
+}
