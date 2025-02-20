@@ -1,30 +1,26 @@
 import { Meta, StoryObj } from "@storybook/react";
 import Input from "./Input";
+import { InputSizes } from "./Input.types";
 
 const meta: Meta<typeof Input> = {
   title: "UI/Input",
   component: Input,
   tags: ["autodocs"],
+  parameters: {
+    pseudo: { hover: true, active: true },
+  },
   argTypes: {
-    label: { control: "text" },
     value: { control: "text" },
-    size: {
+    inputSize: {
       control: {
         type: "select",
-        options: ["large", "medium", "small"],
+        options: [InputSizes.Large, InputSizes.Medium, InputSizes.Small],
       },
     },
-    radius: {
-      control: {
-        type: "select",
-        options: ["Small", "Big"],
-      },
-    },
+    radius: { control: "boolean" },
     onChange: { action: "changed" },
     disabled: { control: "boolean" },
     error: { control: "boolean" },
-    active: { control: "boolean" },
-    hover: { control: "boolean" },
   },
 };
 
@@ -34,18 +30,8 @@ type Story = StoryObj<typeof Input>;
 
 export const DefaultInput: Story = {
   args: {
-    label: "",
     value: "",
-    radius: "Small",
-    size: "medium",
-  },
-};
-export const DefaultTextarea: Story = {
-  args: {
-    label: "Textarea Label",
-    value: "",
-    radius: "Small",
-    size: "medium",
-    isTextarea: true,
+    radius: false,
+    inputSize: InputSizes.Medium,
   },
 };

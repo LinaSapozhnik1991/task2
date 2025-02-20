@@ -1,0 +1,62 @@
+@import ".//..//../scss/variables";
+.authForm {
+  text-align: center;
+  border: 1px solid $borderSecondary;
+  width: 600px;
+  height: 536px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    margin-top: 35px;
+    color: $textPrimary;
+    font: $fontH3;
+  }
+}
+.inputGroup {
+  margin-top: 25px;
+}
+.passwordInput {
+  position: relative;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid $borderPrimary;
+}
+
+.separator span {
+  padding: 0 10px;
+  color: $textDisabled;
+}
+.ButtonGroop {
+    margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.buttonGoogle{
+    margin-top: 25px;
+}
+.googleButtonContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

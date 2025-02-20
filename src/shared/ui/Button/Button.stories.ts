@@ -1,49 +1,46 @@
 import { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
+import { ButtonColors, ButtonSizes } from "./Button.types";
 
 const meta: Meta<typeof Button> = {
   title: "UI/Button",
   component: Button,
   tags: ["autodocs"],
+  parameters: {
+    pseudo: { hover: true, active: true },
+  },
   argTypes: {
-    label: { control: "text" },
+  
     size: {
       control: {
         type: "select",
         options: [
-          "large",
-          "medium",
-          "small",
-          "xs",
-          "mini-large",
-          "mini-medium",
-          "mini-small",
-          "mini-xs",
+      ButtonSizes.Large ,
+       ButtonSizes.Medium ,
+        ButtonSizes.Small ,
+         ButtonSizes.XS,
         ],
       },
     },
-    radius: {
-      control: {
-        type: "select",
-        options: ["Small", "Big"],
-      },
-    },
+    radius:
+     { control: 'boolean'},
+     mini:
+     { control: 'boolean'},
     backgroundColor: {
       control: {
         type: "select",
         options: [
-          "primary",
-          "secondary",
-          "clear",
-          "critical",
-          "critical-secondary",
+      ButtonColors.Primary,
+        ButtonColors.Secondary,
+        ButtonColors.Clear,
+        ButtonColors.Critical,
+        ButtonColors.CriticalSecondary,
         ],
       },
     },
-    disabled: { control: "boolean" },
-    active: { control: "boolean" },
-    hover: { control: "boolean" },
-  },
+  
+  }
+
 };
 
 export default meta;
@@ -52,37 +49,42 @@ type Story = StoryObj<typeof Button>;
 
 export const ButtonPrimary: Story = {
   args: {
-    size: "large",
-    radius: "Small",
-    backgroundColor: "primary",
+    size:  ButtonSizes.Large ,
+    radius: false,
+    mini: true,
+    backgroundColor: ButtonColors.Primary,
   },
 };
 export const ButtonSecondary: Story = {
   args: {
-    size: "large",
-    radius: "Small",
-    backgroundColor: "secondary",
+    size:  ButtonSizes.Large,
+    radius: false,
+    mini: false,
+    backgroundColor:  ButtonColors.Secondary,
   },
 };
 export const ButtonClear: Story = {
   args: {
-    size: "large",
-    radius: "Small",
-    backgroundColor: "clear",
+    size: ButtonSizes.Large,
+    radius: false,
+    mini: false,
+    backgroundColor:  ButtonColors.Clear,
   },
 };
 
 export const ButtonCritical: Story = {
   args: {
-    size: "large",
-    radius: "Small",
-    backgroundColor: "critical",
+    size:  ButtonSizes.Large,
+    radius: false,
+    mini: false,
+    backgroundColor:  ButtonColors.Critical,
   },
 };
 export const ButtonSecondaryCritical: Story = {
   args: {
-    size: "large",
-    radius: "Small",
-    backgroundColor: "critical-secondary",
+    size: ButtonSizes.Large,
+    radius: false,
+    mini: false,
+    backgroundColor:  ButtonColors.CriticalSecondary,
   },
 };

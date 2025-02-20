@@ -1,23 +1,16 @@
-@import "../../../scss/variables";
-
 .button {
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
   border-radius: 8px;
-  -webkit-transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-  -moz-transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-  -ms-transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-  -o-transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
+
+  border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, border-radius 0.3s ease, width 0.3s ease,
+    height 0.3s ease, font-size 0.3s ease;
 
   &.large {
     width: 191px;
@@ -32,49 +25,44 @@
   &.small {
     width: 141px;
     height: 32px;
-    font: $fontP10;
+    font: $fontP8;
   }
   &.xs {
     width: 100px;
     height: 24px;
     font: $fontP10;
   }
-  &.miniLarge {
-    width: 48px;
-    height: 48px;
-    font: $fontP5;
-  }
-  &.miniMedium {
-    width: 40px;
-    height: 40px;
-    font: $fontP6;
+  &.mini {
+    &.large {
+      width: 48px;
+      height: 48px;
+      font: $fontP5;
+    }
+    &.medium {
+      width: 40px;
+      height: 40px;
+      font: $fontP6;
+    }
+
+    &.small {
+      width: 32px;
+      height: 32px;
+      font: $fontP7;
+    }
+
+    &.xs {
+      width: 24px;
+      height: 24px;
+      font: $fontP8;
+    }
   }
 
-  &.miniSmall {
-    width: 32px;
-    height: 32px;
-    font: $fontP7;
-  }
-
-  &.miniXs {
-    width: 24px;
-    height: 24px;
-    font: $fontP8;
-  }
-
-  &.radius-Small {
-    border-radius: $borderRadiusLarge;
-    -webkit-border-radius: $borderRadiusLarge;
-    -moz-border-radius: $borderRadiusLarge;
-    -ms-border-radius: $borderRadiusLarge;
-    -o-border-radius: $borderRadiusLarge;
-  }
-  &.radius-Big {
-    border-radius: $borderRadiusBig;
-    -webkit-border-radius: $borderRadiusBig;
-    -moz-border-radius: $borderRadiusBig;
-    -ms-border-radius: $borderRadiusBig;
-    -o-border-radius: $borderRadiusBig;
+  &.radius {
+    border-radius: 64px;
+    -webkit-border-radius: 64px;
+    -moz-border-radius: 64px;
+    -ms-border-radius: 64px;
+    -o-border-radius: 64px;
   }
 
   &.default {
@@ -85,44 +73,46 @@
   &.primary {
     background-color: $bgAccent;
     color: $white;
-
-    &.hover {
+    &:hover {
       background-color: $bgAccentHover;
     }
 
-    &.active {
+    &:active {
       background-color: $bgAccentActive;
     }
   }
   &.secondary {
     background-color: $bgAccentSubdued;
     color: $textAccent;
-
-    &.hover {
+    &:hover {
       background-color: $bgAccentSubduedHover;
     }
 
-    &.active {
+    &:active {
       background-color: $bgAccentSubduedActive;
     }
   }
   &.clear {
     background-color: $bgPrimary;
     color: $bgAccentHover;
-    &.disabled {
+    &:disabled {
       background-color: $bgPrimary;
       color: $textDisabled;
+    }
+    &:focus {
+      background-color: $bgAccentSubdued;
+      color: $bgAccentActive;
     }
   }
   &.critical {
     background-color: $bgCritical;
     color: $white;
-    &.hover {
+    &:hover {
       background-color: $bgCriticalHover;
       color: $white;
     }
 
-    &.active {
+    &:active {
       background-color: $bgCriticalActive;
       color: $white;
     }
@@ -130,11 +120,11 @@
   &.critical-secondary {
     background-color: $bgCriticalSubdued;
     color: $textCritical;
-    &.hover {
+    &:hover {
       background-color: $bgCriticalSubduedHover;
       color: $textCriticalHover;
     }
-    &.active {
+    &:active {
       background-color: $bgCriticalSubduedActive;
       color: $textCriticalActive;
     }

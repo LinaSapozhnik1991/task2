@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudDownload } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import styles from "./FileUploader.module.scss";
-import Button from "../Button/Button";
+import { Button } from "../Button/Button";
+import { ButtonColors, ButtonSizes } from "../Button/Button.types"; 
 
 interface FileUploaderProps {
   onFileChange: (file: File | null) => void;
   disabled?: boolean;
   size?: "small" | "medium" | "large";
   error?: boolean;
-  hover?: boolean;
-  active?: boolean;
 }
 
 const FileUploader: React.FC<FileUploaderProps> = ({
@@ -19,50 +18,55 @@ const FileUploader: React.FC<FileUploaderProps> = ({
   disabled = false,
   size = "medium",
   error = false,
-  hover = false,
-  active = false,
 }) => {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0] || null;
+    setSelectedFile(file);
     onFileChange(file);
   };
 
-  return (
-    <>
-      <div
-        className={classNames(styles.fileUploader, styles[size], {
-          [styles.disabled]: disabled,
-          [styles.hover]: hover,
-          [styles.active]: active,
-          [styles.error]: error,
-        })}
-      >
-        <div className={styles.uploadContainer}>
-          <FontAwesomeIcon icon={faCloudDownload} className={styles.icon} />
-          <span className={styles.label}>Перетащите файл сюда или</span>
-          <input
-            type="file"
-            onChange={handleFileChange}
-            disabled={disabled}
-            className={styles.fileInput}
-            aria-label="Upload file"
-          />
-        </div>
-        <div className={styles.button}>
-          <Button
-            size={size}
-            label=""
-            backgroundColor={active ? "secondary" : "clear"}
-            disabled={disabled}
-            active={active}
-          />
-        </div>
-      </div>
+  const handleClear = () => {
+    setSelectedFile(null);
+    onFileChange(null);
+  };
 
-      {error && (
-        <span className={styles.errorMessage}>Ошибка загрузки файла</span>
+  return (
+    <div
+      className={classNames(styles.fileUploader, styles[size], {
+        [styles.disabled]: disabled,
+        [styles.error]: error,
+      })}
+    >
+      <div className={styles.uploadContainer}>
+        <FontAwesomeIcon icon={faCloudDownload} className={styles.icon} />
+        <span className={styles.label}>Перетащите файл сюда или</span>
+        <input
+          type="file"
+          onChange={handleFileChange}
+          disabled={disabled}
+          className={styles.fileInput}
+          aria-label="Upload file"
+        />
+      </div>
+      {selectedFile && (
+        <div className={styles.selectedFile}>
+          <span>Выбранный файл: {selectedFile.name}</span>
+        </div>
       )}
-    </>
+      <div className={styles.button}>
+        <Button
+          type="button"
+          size={ButtonSizes.Large}
+          backgroundColor={ButtonColors.Clear}
+          onClick={handleClear}
+          aria-label="Очистить"
+        >
+          Нажмите здесь
+        </Button>
+      </div>
+    </div>
   );
 };
 

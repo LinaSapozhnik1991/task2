@@ -1,0 +1,31 @@
+
+.header{
+    padding: 15px;
+    background-color: $bgSecondary;
+
+    .header_content{
+        display: flex;
+     align-items: center;
+     
+        justify-content: center;
+      
+ height: 48px;
+        background-color: $white;
+        border-radius: $borderRadiusLarge;
+        justify-content: space-between;
+      
+        -webkit-border-radius: $borderRadiusLarge;
+        -moz-border-radius: $borderRadiusLarge;
+        -ms-border-radius: $borderRadiusLarge;
+        -o-border-radius: $borderRadiusLarge;
+        .header_content_right{
+            display: flex;
+            align-items: center;
+            gap:10px;
+            margin-right: 15px;
+        }
+        .logo{margin-left: 15px;}
+        
+    }
+    
+}
