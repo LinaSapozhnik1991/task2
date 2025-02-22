@@ -1,25 +1,15 @@
 import type { NextConfig } from "next";
-import { RuleSetRule } from "webpack";
 
 const nextConfig: NextConfig = {
   sassOptions: {
     includePaths: ["./src"],
-    prependData: `@import "src/scss/_variables.scss";`
+    prependData: `@import "src/scss/_variables.scss";`,
   },
 
-
-
   webpack(config) {
-    const fileLoaderRule = config.module.rules.find((rule: RuleSetRule) => {
-      if (rule.test instanceof RegExp) {
-        return rule.test.test(".svg");
-      }
-      return false;
-    });
-
-    if (!fileLoaderRule) {
-      throw new Error("File loader rule for SVG not found.");
-    }
+    const fileLoaderRule = config.module.rules.find((rule: { test: { test: (arg0: string) => unknown; }; }) =>
+      rule.test?.test?.(".svg")
+    )
 
     config.module.rules.push(
       {
@@ -35,7 +25,7 @@ const nextConfig: NextConfig = {
           {
             loader: "@svgr/webpack",
             options: {
-              svgo: false, 
+              svgo: false,
               svgoConfig: {
                 plugins: [
                   {
@@ -62,7 +52,7 @@ const nextConfig: NextConfig = {
 
     fileLoaderRule.exclude = /\.svg$/i;
 
-    return config; 
+    return config;
   },
 };
 

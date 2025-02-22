@@ -6,10 +6,7 @@ export enum InputSizes {
   Large = "large",
 }
 
-export type InputSize =
-  | InputSizes.Large
-  | InputSizes.Medium
-  | InputSizes.Small;
+export type InputSize = InputSizes.Large | InputSizes.Medium | InputSizes.Small;
 
 export enum InputTypes {
   Text = "text",
@@ -31,19 +28,17 @@ export type InputType =
   | InputTypes.Search;
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  id?: string; 
-  value?: string;
-  placeholder?: string; 
-  radius?: boolean;
+  id?: string;
+  value?: string | number | readonly string[];
+  placeholder?: string;
+  rounded?: boolean;
   disabled?: boolean;
-  inputSize?: InputSize;
+  inputSize?: InputSizes;
   error?: boolean;
-  onChange?: 
-    (event: React.ChangeEvent<HTMLInputElement >) => void;
-
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  icon?: ReactNode;
   onClear?: () => void;
   type?: InputType;
   maxLength?: number;
   children?: ReactNode;
 }
-

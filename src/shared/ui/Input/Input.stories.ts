@@ -17,7 +17,7 @@ const meta: Meta<typeof Input> = {
         options: [InputSizes.Large, InputSizes.Medium, InputSizes.Small],
       },
     },
-    radius: { control: "boolean" },
+    rounded: { control: "boolean" },
     onChange: { action: "changed" },
     disabled: { control: "boolean" },
     error: { control: "boolean" },
@@ -31,7 +31,7 @@ type Story = StoryObj<typeof Input>;
 export const DefaultInput: Story = {
   args: {
     value: "",
-    radius: false,
+    
     inputSize: InputSizes.Medium,
   },
 };

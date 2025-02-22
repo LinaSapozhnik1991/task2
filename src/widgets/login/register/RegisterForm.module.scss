@@ -1,0 +1,55 @@
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: $bgPrimary;
+  padding: 30px;
+  width: 600px;
+  height: 573px;
+
+  h3 {
+    font: $fontH3;
+    color: $textPrimary;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+.contentForm{
+  margin-top: 20px;
+  width: 540px;
+  height: 440px;
+}
+  .inputContainer {
+    width: 100%;
+    margin-bottom: 16px;
+
+    .error {
+      color: $textCritical;
+      font: $fontP4;
+      margin-top: 5px;
+    }
+  }
+
+  .passwordInput {
+    position: relative;
+    
+
+    .eyeIcon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: $iconAccent;
+      transition: color 0.2s;
+    }
+  }
+
+  .ButtonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+   
+
+  }
+}

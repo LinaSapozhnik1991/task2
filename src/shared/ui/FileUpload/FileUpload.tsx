@@ -12,6 +12,8 @@ interface FileUploadProps {
   isHovered?: boolean;
   error?: boolean;
   isUploading?: boolean;
+  uploadProgress?: number,
+ 
 }
 
 const FileUpload: React.FC<FileUploadProps> = ({
@@ -22,6 +24,8 @@ const FileUpload: React.FC<FileUploadProps> = ({
   isHovered = false,
   error = false,
   isUploading = false,
+ 
+  ...rest
 }) => {
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isSimulatingUpload, setIsSimulatingUpload] = useState(false);
@@ -80,7 +84,9 @@ const FileUpload: React.FC<FileUploadProps> = ({
           [styles.hover]: isHovered,
           [styles.error]: error,
           [styles.uploading]: isSimulatingUpload,
+    
         })}
+        {...rest }
       >
         <div className={styles.progressBar}>
           <div

@@ -4,10 +4,10 @@ import { faCloudDownload } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import styles from "./FileUploader.module.scss";
 import { Button } from "../Button/Button";
-import { ButtonColors, ButtonSizes } from "../Button/Button.types"; 
+import { ButtonColors, ButtonSizes } from "../Button/Button.types";
 
 interface FileUploaderProps {
-  onFileChange: (file: File | null) => void;
+  onFileChange: (files: File[]) => void;
   disabled?: boolean;
   size?: "small" | "medium" | "large";
   error?: boolean;
@@ -19,17 +19,17 @@ const FileUploader: React.FC<FileUploaderProps> = ({
   size = "medium",
   error = false,
 }) => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0] || null;
-    setSelectedFile(file);
-    onFileChange(file);
+    const files = event.target.files ? Array.from(event.target.files) : [];
+    setSelectedFiles(files);
+    onFileChange(files);
   };
 
   const handleClear = () => {
-    setSelectedFile(null);
-    onFileChange(null);
+    setSelectedFiles([]);
+    onFileChange([]);
   };
 
   return (
@@ -48,11 +48,17 @@ const FileUploader: React.FC<FileUploaderProps> = ({
           disabled={disabled}
           className={styles.fileInput}
           aria-label="Upload file"
+          multiple
         />
       </div>
-      {selectedFile && (
+      {selectedFiles.length > 0 && (
         <div className={styles.selectedFile}>
-          <span>Выбранный файл: {selectedFile.name}</span>
+          <span>Выбранные файлы:</span>
+          <ul>
+            {selectedFiles.map((file) => (
+              <li key={file.name}>{file.name}</li>
+            ))}
+          </ul>
         </div>
       )}
       <div className={styles.button}>

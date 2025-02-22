@@ -29,8 +29,7 @@ const DropdownWithList: React.FC<DropdownWithListProps> = ({
   isOpen,
   selectedOption,
   size = "medium",
-  active,
-  hover,
+
   disabled,
   isSelect,
   onOptionSelect,
@@ -38,8 +37,7 @@ const DropdownWithList: React.FC<DropdownWithListProps> = ({
 
 }) => {
   const dropdownClass = classNames(styles.dropdown, styles[size], {
-    [styles.active]: active,
-    [styles.hover]: hover,
+   
     [styles.disabled]: disabled,
   });
 

@@ -1,0 +1,83 @@
+.authForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $white;
+  padding: 30px;
+  width: 600px;
+  max-height: 536px;
+
+  h3 {
+    color: $textPrimary;
+    font: $fontH3;
+    margin-bottom: 40px;
+    
+  }
+  .contentForm {
+   
+    width: 540px;
+ height: auto;
+   
+  }
+  .inputGroup {
+    margin-bottom: 16px;
+    width: 100%;
+
+    .error {
+      color: $textCritical;
+      font: $fontP4;
+      margin-top: 5px;
+    }
+  }
+  .passwordInput {
+    position: relative;
+
+    .eyeIcon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: $iconAccent;
+      transition: color 0.2s;
+    }
+  }
+  .ButtonGroup {
+    width: 100%;
+    display: flex;
+    margin-top: 24px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .separator {
+    display: flex;
+    align-items: center;
+  margin: 40px;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      border-top: 1px solid $borderPrimary;
+    }
+
+    span {
+      padding: 0 10px;
+      color: $textDisabled;
+    }
+  }
+
+  .buttonGoogle {
+    width: 100%;
+    height: 48px;
+  }
+
+  .googleButtonContent {
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}

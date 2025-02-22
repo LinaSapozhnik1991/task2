@@ -1,39 +1,119 @@
 .inputContainer {
-  position: relative;
   display: flex;
-  align-items: center;
-  border: 1px solid $borderPrimary;
-  border-radius: $borderRadiusMedium;
-  width: 540px; 
-}
+  min-width: 340px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
 
-.input {
-  padding-left: 30px;
-  border: none;
-  outline: none;
-  flex-grow: 1; 
-}
+  &.rounded {
+    border-radius: $borderRadiusBig; // Убедитесь, что эта переменная определена
+  }
 
-.icon {
-  position: absolute;
-  left: 10px; 
-  color: $iconPrimary;
-}
+  .label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $textSecondary;
 
-.clearIcon {
-  position: absolute;
-  right: 10px; 
-  cursor: pointer;
-  background: none; 
-  border: none; 
-  color: $iconPrimary;
-}
+    font: $fontP4;
+  }
 
-.error {
-  border-color: $borderCritical;
-}
+  .input {
+    padding-left: 30px;
+    border: 1px solid $borderSecondary;
+    color: $textPrimary;
+    width: 100%;
+    border-radius: $borderRadiusLarge;
+    font: $fontP4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
-.errorMessage {
-  color: $textCritical;
-  font-size: $fontP7;
+    &:focus {
+      border-color: $borderAccent;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: $bgDisabled;
+      color: $textDisabled;
+      cursor: not-allowed;
+      border: none;
+
+      &.icon {
+        color: $iconDisabled;
+      }
+
+      .clearIcon {
+        color: $iconDisabled;
+      }
+    }
+
+    &:active {
+      border-color: $borderAccent;
+    }
+
+    &:hover {
+      background-color: $bgSecondary;
+      border: none;
+      color: $textPrimary;
+    }
+
+    &.error {
+      border-color: $borderCritical;
+      color: $textCritical;
+    }
+
+    &.default {
+      background-color: $bgAccent;
+      color: $white;
+    }
+  }
+
+  &.small {
+    font: $fontP7;
+    height: 32px;
+  }
+
+  &.medium {
+    font: $fontP5;
+    height: 40px;
+  }
+
+  &.large {
+    font: $fontP3;
+    height: 48px;
+  }
+
+  .errorMessage {
+    color: $textCritical;
+    font-size: $fontP7;
+  }
+
+  .icon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $iconPrimary;
+
+    &:disabled {
+      color: $iconDisabled;
+    }
+  }
+
+  .clearIcon {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $iconPrimary;
+
+    &:disabled {
+      color: $iconDisabled;
+    }
+  }
 }
