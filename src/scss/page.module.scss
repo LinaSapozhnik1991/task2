@@ -1,8 +1,17 @@
 .page {
-  margin-top: 35px auto;
-display: flex;
+  margin-top: 0 auto;
+display: grid;
 background-color: $bgSecondary;
 flex-direction: column;
+display: grid;
+grid-template-areas: 
+"h h"
+"s .";
+
+  grid-template-rows:  260px 1fr;
+  grid-template-columns: 2fr 10fr;
+row-gap: 12px;
+column-gap: 12px;
 gap:20px;}
 /*.page {
     --gray-rgb: 0, 0, 0;

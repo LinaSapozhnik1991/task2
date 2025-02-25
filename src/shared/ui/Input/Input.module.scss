@@ -1,12 +1,8 @@
 .inputContainer {
-  display: flex;
+ display: flex;
   min-width: 340px;
   position: relative;
   transition: all 0.3s ease-in-out;
-
-  &.rounded {
-    border-radius: $borderRadiusBig; // Убедитесь, что эта переменная определена
-  }
 
   .label {
     display: block;
@@ -20,12 +16,17 @@
     padding-left: 30px;
     border: 1px solid $borderSecondary;
     color: $textPrimary;
-    width: 100%;
+    min-width: 340px;
+
     border-radius: $borderRadiusLarge;
     font: $fontP4;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    &.rounded {
+      border-radius: $borderRadiusBig;
+    }
 
     &:focus {
       border-color: $borderAccent;
@@ -57,10 +58,7 @@
       color: $textPrimary;
     }
 
-    &.error {
-      border-color: $borderCritical;
-      color: $textCritical;
-    }
+    
 
     &.default {
       background-color: $bgAccent;
@@ -82,7 +80,10 @@
     font: $fontP3;
     height: 48px;
   }
-
+  .error {
+    border-color: $borderCritical;
+    color: $textCritical;
+  }
   .errorMessage {
     color: $textCritical;
     font-size: $fontP7;
@@ -90,9 +91,9 @@
 
   .icon {
     position: absolute;
+    padding: 10px;
     width: 12px;
     height: 12px;
-    left: 5%;
     top: 50%;
     transform: translateY(-50%);
     color: $iconPrimary;
@@ -101,16 +102,15 @@
       color: $iconDisabled;
     }
   }
-
   .clearIcon {
     position: absolute;
     background-color: transparent;
     border: none;
-    right: 3%;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    color: $iconPrimary;
+    color: $iconSecondary;
 
     &:disabled {
       color: $iconDisabled;

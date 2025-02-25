@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ReactNode } from "react";
+import { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
 
 export enum InputSizes {
   Small = "small",
@@ -27,6 +27,7 @@ export type InputType =
   | InputTypes.Url
   | InputTypes.Search;
 
+
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
   value?: string | number | readonly string[];
@@ -34,11 +35,28 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   rounded?: boolean;
   disabled?: boolean;
   inputSize?: InputSizes;
-  error?: boolean;
+  error?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   icon?: ReactNode;
+  showIcon?: boolean;
   onClear?: () => void;
   type?: InputType;
   maxLength?: number;
   children?: ReactNode;
 }
+
+
+export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  id?: string;
+  value?: string | number | readonly string[];
+  placeholder?: string;
+  rounded?: boolean;
+  disabled?: boolean;
+  inputSize?: InputSizes;
+  showLabel?:boolean;
+  error?: string;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  maxLength?: number;
+  children?: ReactNode;
+}
+

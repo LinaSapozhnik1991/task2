@@ -1,0 +1,64 @@
+.textareaContainer {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  gap: 15px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+
+  .label {
+    display: block;
+    margin-bottom: 10px;
+    color: $textSecondary;
+    font: $fontP4;
+  }
+
+  .textarea {
+    padding: 10px;
+    border: 1px solid $borderSecondary;
+    color: $textPrimary;
+    min-width: 340px;
+    height: 80px;
+    border-radius: $borderRadiusLarge;
+    font: $fontP4;
+    resize: none;
+    &.small {
+      font: $fontP7;
+    }
+
+    &.medium {
+      font: $fontP5;
+    }
+
+    &.large {
+      font: $fontP3;
+    }
+
+    &:focus {
+      border-color: $borderAccent;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: $bgDisabled;
+      color: $textDisabled;
+      cursor: not-allowed;
+      border: none;
+    }
+
+    &:active {
+      border-color: $borderAccent;
+    }
+
+    &:hover {
+      background-color: $bgSecondary;
+      border-color: $bgSecondary;
+      outline: none;
+    }
+
+    &.error {
+      border-color: $borderCritical;
+      color: $textCritical;
+    }
+  }
+}

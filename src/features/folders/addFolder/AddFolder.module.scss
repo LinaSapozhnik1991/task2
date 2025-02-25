@@ -1,0 +1,37 @@
+.drawer {
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 536px;
+  height: 100%;
+}
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  h2 {
+    font: $fontH3;
+  }
+  p {
+    font: $fontP3;
+    color: $textSecondary;
+    margin-bottom: 25px;
+  }
+  label {
+    color: $textSecondary;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+}

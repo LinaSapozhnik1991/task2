@@ -15,11 +15,11 @@ export const Input: FC<InputProps> = memo(
     placeholder = '',
     rounded = false,
     inputSize = InputSizes.Medium,
-    error = false,
+    error = '',
     disabled,
     onChange,
     onClear,
-    icon,
+    showIcon = true,
     type = InputTypes.Text,
     maxLength,
     ...rest
@@ -29,28 +29,37 @@ export const Input: FC<InputProps> = memo(
       styles[inputSize],
 
       {
-        [styles.rounded]: rounded,
-        [styles.error]: error,
+      
         [styles.disabled]: disabled,
       }
     );
-
+    const inputFieldClasses = classNames(
+      styles.input,
+      {
+        [styles.rounded]: rounded, 
+        
+        [styles.error]: !!error,
+      }
+    );
     return (
       <div className={inputClasses}>
         <label htmlFor={id} className={styles.label}>
           {children}
         </label>
-
+        {showIcon && (
+            <span className={styles.icon}>
+              <FontAwesomeIcon icon={faSearch} /> 
+            </span>
+          )}
         <input
           id={id}
           type={type}
-          {...(icon && <FontAwesomeIcon icon={faSearch} />)}
           value={value}
           placeholder={placeholder}
           onChange={onChange}
           maxLength={maxLength}
-          className={styles.input}
-          aria-invalid={error}
+          className={inputFieldClasses}
+          aria-invalid={!!error}
           aria-disabled={disabled}
           {...rest}
         />
@@ -64,7 +73,7 @@ export const Input: FC<InputProps> = memo(
             <FontAwesomeIcon icon={faTimes} />
           </button>
         )}
-        {error && <span className={styles.errorMessage}>Ошибка!</span>}
+        {error && <span className={styles.errorMessage}></span>}
       </div>
     );
   }
