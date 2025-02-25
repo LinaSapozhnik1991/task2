@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
-import styles from "./Modal.module.scss"; // Импортируйте ваши стили
-import usePortal from "../hooks/usePortal"; // Импортируйте ваш хук
+import styles from "./Modal.module.scss";
+import usePortal from "../hooks/usePortal";
 
 interface ModalProps {
   isOpen: boolean;
